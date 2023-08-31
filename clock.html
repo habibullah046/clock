@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Teko:wght@300&display=swap');
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .clock-container {
+            background-color: black;
+            height: 100px;
+            width: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        span {
+            color: red;
+            font-size: 100px;
+            /* font-family: 'Lato', sans-serif; */
+            font-family: 'Teko', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock-container">
+            <span id="hr">00</span>
+            <span>:</span>
+            <span id="mnt">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+            <!-- <span id="a-p"> AM</span> -->
+        </div>
+    </div>
+    <script>
+        let hr = document.getElementById("hr")
+        let mnt = document.getElementById("mnt")
+        let sec = document.getElementById("sec")
+        let a_p = document.getElementById("a_p")
+        function time() {
+            let clock_time = new Date();
+            hr.innerHTML = clock_time.getHours();
+            mnt.innerHTML = clock_time.getMinutes();
+            sec.innerHTML = clock_time.getSeconds();
+            // if(clock_time.getHours() >12)
+            // {
+            //     a_p.innerHTML="PM"
+            // }
+        }
+        let timeID = setInterval(time, 1000);
+        
+
+    </script>
+</body>
+
+</html>
